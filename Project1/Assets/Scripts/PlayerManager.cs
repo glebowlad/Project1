@@ -8,15 +8,20 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     public GameObject playerPrefab;
-    public Vector3 sliderOffset = new Vector3(0,200,0);
+    public GameObject prayerPrefab;
+    public GameObject slashPrefab;
+    public Vector3 prayOffset = new Vector3(2, 0, 0);
     public Slider health;
     private int damage;
     public TextMeshProUGUI text;
 
-    // Start is called before the first frame update
-   
+    
+ 
 
-    // Update is called once per frame
+    public void Attack()
+    {
+        
+    }
     public void Talk()
     {
         
@@ -24,9 +29,9 @@ public class PlayerManager : MonoBehaviour
         health.value = 0;
     }
 
-    void Prey()
+    public void Pray()
     {
-        
+        Instantiate(prayerPrefab,transform.position,Quaternion.identity,transform);  
         text.text = "Вы умерли.";
         health.value = 0;
 

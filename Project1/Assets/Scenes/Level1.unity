@@ -334,6 +334,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7035518005458954989, guid: 334a19e91960a7241a8dbdc69393237d, type: 3}
       propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035518005458954989, guid: 334a19e91960a7241a8dbdc69393237d, type: 3}
+      propertyPath: m_MaxValue
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035518005458954989, guid: 334a19e91960a7241a8dbdc69393237d, type: 3}
+      propertyPath: m_WholeNumbers
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -563,7 +571,7 @@ GameObject:
   - component: {fileID: 684908758}
   - component: {fileID: 684908757}
   m_Layer: 5
-  m_Name: PreyButton (2)
+  m_Name: PrayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -635,7 +643,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1195126873}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: Prey
+        m_MethodName: Pray
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -885,8 +893,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7112e03d6841d8042844b5de07557a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floatingTextPrefab: {fileID: 0}
   enemyPrefab: {fileID: 2301821867687521672, guid: 1bf84f52e4c2f344082219bcffb9ddfa, type: 3}
+  slashPrefab: {fileID: 0}
+  enemyHealth: {fileID: 0}
+  damage: 10
   position: {x: 5.7, y: 1, z: 0}
+  textOffset: {x: -1, y: 1, z: 0}
 --- !u!114 &909705541 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7493874962010686618, guid: aac005ddfa010454fa6688cb794beb92, type: 3}
@@ -1190,7 +1203,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1180578676}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1195126874}
+        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1180578676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,6 +1266,7 @@ GameObject:
   - component: {fileID: 1195126871}
   - component: {fileID: 1195126870}
   - component: {fileID: 1195126873}
+  - component: {fileID: 1195126874}
   - component: {fileID: 1195126869}
   m_Layer: 5
   m_Name: Canvas
@@ -1348,9 +1374,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 0}
-  sliderOffset: {x: 0, y: 200, z: 0}
+  prayerPrefab: {fileID: 7614621882954495531, guid: fb1fbb6d16ba85744b176d89fd10b998, type: 3}
+  slashPrefab: {fileID: 8512428086239989607, guid: 075ace5de5590284e8ef5e642ab46d07, type: 3}
+  prayOffset: {x: 100, y: 0, z: 0}
   health: {fileID: 909705541}
   text: {fileID: 1090719156}
+--- !u!114 &1195126874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195126868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7112e03d6841d8042844b5de07557a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatingTextPrefab: {fileID: 6745444706686325388, guid: 7070eaf242dad4a488dad69241d6bbe2, type: 3}
+  enemyPrefab: {fileID: 2301821867687521672, guid: 1bf84f52e4c2f344082219bcffb9ddfa, type: 3}
+  slashPrefab: {fileID: 8512428086239989607, guid: 075ace5de5590284e8ef5e642ab46d07, type: 3}
+  enemyHealth: {fileID: 1659622643}
+  damage: 10
+  position: {x: 5.7, y: 1, z: 0}
+  textOffset: {x: -1, y: 1, z: 0}
 --- !u!1001 &1272954296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1469,6 +1516,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7493874962010686618, guid: aac005ddfa010454fa6688cb794beb92, type: 3}
       propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493874962010686618, guid: aac005ddfa010454fa6688cb794beb92, type: 3}
+      propertyPath: m_MaxValue
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493874962010686618, guid: aac005ddfa010454fa6688cb794beb92, type: 3}
+      propertyPath: m_WholeNumbers
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1615,6 +1670,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6307207121685111568, guid: 334a19e91960a7241a8dbdc69393237d, type: 3}
   m_PrefabInstance: {fileID: 233774743}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1659622643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7035518005458954989, guid: 334a19e91960a7241a8dbdc69393237d, type: 3}
+  m_PrefabInstance: {fileID: 233774743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1866858897
 GameObject:
   m_ObjectHideFlags: 0
