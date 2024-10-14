@@ -8,11 +8,14 @@ public class PlayerSpawner : MonoBehaviour
     
     public Vector3 position= new Vector3(150,100,0);
 
-    private int characterId;
+    [SerializeField]
+    public int CharacterId { get; private set; }
 
+
+  
     void Awake()
     {
-        characterId = PlayerPrefs.GetInt("character");
-        Instantiate(character[characterId],position, Quaternion.identity);
+        CharacterId = PlayerPrefs.GetInt("character");
+        Instantiate(character[CharacterId],position, Quaternion.identity);
     }
 }

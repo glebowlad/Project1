@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class MenuManager: MonoBehaviour
 {
-    public int levelIndex=1;
+    [SerializeField]
+    private int levelIndex=2;
 
     public void Play()
     {
@@ -16,5 +17,10 @@ public class MenuManager: MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit");
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(2);
     }
 }
