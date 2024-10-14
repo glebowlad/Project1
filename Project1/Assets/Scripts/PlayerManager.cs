@@ -67,6 +67,14 @@ public class PlayerManager : MonoBehaviour
         {
            attackButton.onClick.AddListener(menuManager.RestartLevel);
         }
+        if (enemy.enemyHealth.value <= 0)
+        {
+            attackText.text = "Продолжить";
+            prayButton.interactable = false;
+            talkButton.interactable = false;
+
+            attackButton.onClick.AddListener(menuManager.End);
+        }
     }
     public void Talk()
     {

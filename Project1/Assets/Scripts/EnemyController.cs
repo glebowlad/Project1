@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour
 
         enemyHealth.value -= damage;
         isAttacked = true;
-        Debug.Log(isAttacked);
+        
         var text = Instantiate(floatingTextPrefab, position + textOffset, Quaternion.identity, transform);
         text.GetComponent<TextMeshProUGUI>().text = "-" + damage.ToString();
 
