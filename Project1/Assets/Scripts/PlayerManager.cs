@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
 {
     public EnemyController enemy;
     public PlayerSpawner spawner;
+    public MenuManager menuManager;
 
     public GameObject prayerPrefab;
     public GameObject slashPrefab;
@@ -19,9 +20,13 @@ public class PlayerManager : MonoBehaviour
     public Vector3 prayOffset = new Vector3(2, 0, 0);
     public Slider health;
     public TextMeshProUGUI text;
+    public TextMeshProUGUI attackText;
+
     
     public Button prayButton;
     public Button talkButton;
+    public Button attackButton;
+
 
    void Start()
     {
@@ -51,12 +56,20 @@ public class PlayerManager : MonoBehaviour
     {
         Instantiate(attackPrefab, transform.position, Quaternion.identity, transform);
         enemy.TakeDamage(10f);
+
+        if (health.value <= 0)
+        {
+           attackButton.onClick.AddListener(menuManager.RestartLevel);
+        }
     }
     public void Talk()
     {
         
         health.value = 0;
         text.text = "Вы умерли.Начать заново?";
+        attackText.text = "Заново";
+        prayButton.interactable = false;
+        talkButton.interactable = false;
         
       
     }
@@ -66,9 +79,17 @@ public class PlayerManager : MonoBehaviour
         Instantiate(prayerPrefab,transform.position,Quaternion.identity,transform);  
         health.value = 0;
         text.text = "Вы умерли.Начать заново?";
-       
-       
+        attackText.text = "Заново";
+        prayButton.interactable = false;
+        talkButton.interactable = false;
 
 
+
+
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health.value -= damage;
     }
 }

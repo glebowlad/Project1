@@ -646,6 +646,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 2301821867687521672, guid: 1bf84f52e4c2f344082219bcffb9ddfa, type: 3}
   winTextPrefab: {fileID: 0}
   enemyHealth: {fileID: 0}
+  player: {fileID: 0}
   position: {x: 5.7, y: 1, z: 0}
   textOffset: {x: -1, y: 1, z: 0}
   winTextOffset: {x: -2, y: 4, z: 0}
@@ -754,6 +755,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8698868883872066712, guid: a0035826ce84c9849b166de9be1ec629, type: 3}
   m_PrefabInstance: {fileID: 6424600052206774892}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1180578675 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2215714565268355714, guid: a0035826ce84c9849b166de9be1ec629, type: 3}
+  m_PrefabInstance: {fileID: 6424600052206774892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1195126868
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +780,7 @@ GameObject:
   - component: {fileID: 1195126873}
   - component: {fileID: 1195126874}
   - component: {fileID: 1195126869}
+  - component: {fileID: 1195126875}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -875,6 +888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 1195126874}
   spawner: {fileID: 838517525}
+  menuManager: {fileID: 1195126875}
   prayerPrefab: {fileID: 7614621882954495531, guid: fb1fbb6d16ba85744b176d89fd10b998, type: 3}
   slashPrefab: {fileID: 8512428086239989607, guid: 075ace5de5590284e8ef5e642ab46d07, type: 3}
   arrowPrefab: {fileID: 54708834591875911, guid: 8b115a63198c7d447a3f380ef7ac2b14, type: 3}
@@ -883,9 +897,10 @@ MonoBehaviour:
   prayOffset: {x: 100, y: 0, z: 0}
   health: {fileID: 909705541}
   text: {fileID: 1090719156}
-  attackButtonText: {fileID: 1481264212}
+  attackText: {fileID: 1481264212}
   prayButton: {fileID: 684908757}
   talkButton: {fileID: 1932960155}
+  attackButton: {fileID: 1180578675}
 --- !u!114 &1195126874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,9 +917,23 @@ MonoBehaviour:
   enemyPrefab: {fileID: 2301821867687521672, guid: 1bf84f52e4c2f344082219bcffb9ddfa, type: 3}
   winTextPrefab: {fileID: 7882140247836395475, guid: b7ed7965909703a4b9fd47d30865809a, type: 3}
   enemyHealth: {fileID: 1659622643}
+  player: {fileID: 0}
   position: {x: 5.7, y: 1, z: 0}
   textOffset: {x: -1, y: 1, z: 0}
   winTextOffset: {x: -2, y: 4, z: 0}
+--- !u!114 &1195126875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195126868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec1bbed45550a214aa55128d7c5646d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelIndex: 2
 --- !u!1001 &1272954296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1410,7 +1439,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 762053951779330070, guid: 5bb6f2d3562bbe44ea3a0ff3d9c9f057, type: 3}
       propertyPath: m_Name
-      value: TalkButton (1)
+      value: TalkButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 762053951779330070, guid: 5bb6f2d3562bbe44ea3a0ff3d9c9f057, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7862462431317056575, guid: 5bb6f2d3562bbe44ea3a0ff3d9c9f057, type: 3}
       propertyPath: m_Pivot.x

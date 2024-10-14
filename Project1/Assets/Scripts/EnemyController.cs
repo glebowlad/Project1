@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     public GameObject winTextPrefab;
     
     public Slider enemyHealth;
+    public PlayerManager player;
     
 
     public Vector3 position= new Vector3 (5.7f,1,0);
@@ -40,5 +41,10 @@ public class EnemyController : MonoBehaviour
             var winText=Instantiate(winTextPrefab, position + winTextOffset, Quaternion.identity, transform);
             winText.GetComponent<TextMeshProUGUI>().text = "Победа";
         }
+    }
+
+    public void Attack()
+    {
+        player.TakeDamage(10f);
     }
 }
