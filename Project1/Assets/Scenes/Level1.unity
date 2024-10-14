@@ -650,6 +650,7 @@ MonoBehaviour:
   position: {x: 5.7, y: 1, z: 0}
   textOffset: {x: -1, y: 1, z: 0}
   winTextOffset: {x: -2, y: 4, z: 0}
+  isAttacked: 0
 --- !u!114 &909705541 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7493874962010686618, guid: aac005ddfa010454fa6688cb794beb92, type: 3}
@@ -917,10 +918,11 @@ MonoBehaviour:
   enemyPrefab: {fileID: 2301821867687521672, guid: 1bf84f52e4c2f344082219bcffb9ddfa, type: 3}
   winTextPrefab: {fileID: 7882140247836395475, guid: b7ed7965909703a4b9fd47d30865809a, type: 3}
   enemyHealth: {fileID: 1659622643}
-  player: {fileID: 0}
+  player: {fileID: 1195126873}
   position: {x: 5.7, y: 1, z: 0}
   textOffset: {x: -1, y: 1, z: 0}
   winTextOffset: {x: -2, y: 4, z: 0}
+  isAttacked: 0
 --- !u!114 &1195126875
 MonoBehaviour:
   m_ObjectHideFlags: 0

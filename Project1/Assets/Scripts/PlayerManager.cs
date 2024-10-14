@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject arrowPrefab;
     public GameObject magicPrefab;
     public GameObject attackPrefab;
+    public GameObject floatingTextPrefab;
 
     public Vector3 prayOffset = new Vector3(2, 0, 0);
     public Slider health;
@@ -27,6 +28,9 @@ public class PlayerManager : MonoBehaviour
     public Button talkButton;
     public Button attackButton;
 
+    public bool isAttacked=false;
+
+    //public bool isAttacked=false;
 
    void Start()
     {
@@ -56,6 +60,8 @@ public class PlayerManager : MonoBehaviour
     {
         Instantiate(attackPrefab, transform.position, Quaternion.identity, transform);
         enemy.TakeDamage(10f);
+        isAttacked = false;
+        
 
         if (health.value <= 0)
         {
@@ -91,5 +97,8 @@ public class PlayerManager : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health.value -= damage;
+        isAttacked = true;
+        var text = Instantiate(floatingTextPrefab, transform.position , Quaternion.identity, transform);
+        text.GetComponent<TextMeshProUGUI>().text = "-" + damage.ToString();
     }
 }
