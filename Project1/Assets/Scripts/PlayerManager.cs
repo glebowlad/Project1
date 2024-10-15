@@ -69,6 +69,7 @@ public class PlayerManager : MonoBehaviour
         }
         if (enemy.enemyHealth.value <= 0)
         {
+            text.text = " Вы одолели врага.Продолжить?";
             attackText.text = "Продолжить";
             prayButton.interactable = false;
             talkButton.interactable = false;
