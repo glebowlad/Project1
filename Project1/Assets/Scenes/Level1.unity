@@ -814,6 +814,7 @@ MonoBehaviour:
   enemy: {fileID: 1195126874}
   spawner: {fileID: 838517525}
   menuManager: {fileID: 1195126875}
+  slashPos: {x: 0.71, y: 0, z: 0}
   prayerPrefab: {fileID: 7614621882954495531, guid: fb1fbb6d16ba85744b176d89fd10b998, type: 3}
   slashPrefab: {fileID: 8512428086239989607, guid: 075ace5de5590284e8ef5e642ab46d07, type: 3}
   arrowPrefab: {fileID: 54708834591875911, guid: 8b115a63198c7d447a3f380ef7ac2b14, type: 3}

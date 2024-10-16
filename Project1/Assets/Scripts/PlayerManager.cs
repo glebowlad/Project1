@@ -11,6 +11,8 @@ public class PlayerManager : MonoBehaviour
     public PlayerSpawner spawner;
     public MenuManager menuManager;
 
+    [SerializeField] private Vector3 slashPos;
+
     public GameObject prayerPrefab;
     public GameObject slashPrefab;
     public GameObject arrowPrefab;
@@ -58,7 +60,7 @@ public class PlayerManager : MonoBehaviour
     }
     public void Attack()
     {
-        Instantiate(attackPrefab, transform.position, Quaternion.identity, transform);
+        Instantiate(attackPrefab, slashPos, Quaternion.identity);
         enemy.TakeDamage(10f);
         isAttacked = false;
         
