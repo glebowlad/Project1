@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
     
 
     public Vector3 position= new Vector3 (5.7f,1,0);
-    public Vector3 textOffset = new Vector3(-1, 1, 0);
+    public Vector3 textOffset;
     public Vector3 winTextOffset = new Vector3(-20, 5, 0);
 
     public bool isAttacked=false;
@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour
     void Awake()
     {
         Instantiate(enemyPrefab, position, Quaternion.identity);
-        
+        Debug.Log($"test {textOffset}");
     }
 
     private void LateUpdate()
@@ -41,8 +41,14 @@ public class EnemyController : MonoBehaviour
 
         enemyHealth.value -= damage;
         isAttacked = true;
-        
-        var text = Instantiate(floatingTextPrefab, position + textOffset, Quaternion.identity, transform);
+
+        var text = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity, transform);
+
+        var oldPos = text.transform.position;
+        oldPos += textOffset;
+        text.transform.position = oldPos;
+
+        Debug.Log($"{text.transform.position}");
         text.GetComponent<TextMeshProUGUI>().text = "-" + damage.ToString();
 
         if (enemyHealth.value <= 0)

@@ -108,6 +108,14 @@ public class PlayerManager : MonoBehaviour
         health.value -= damage;
         isAttacked = true;
         var text = Instantiate(floatingTextPrefab, transform.position , Quaternion.identity, transform);
+
+        Debug.Log($"{transform.position}");
+        Debug.Log($"Done");
+
+        var oldPos = text.transform.position;
+        oldPos.z = 0f;
+        text.transform.position = oldPos;
+
         text.GetComponent<TextMeshProUGUI>().text = "-" + damage.ToString();
     }
 }
