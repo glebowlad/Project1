@@ -292,6 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 79149567}
   - component: {fileID: 79149569}
+  - component: {fileID: 79149570}
   - component: {fileID: 79149568}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -416,6 +417,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79149566}
   m_CullTransparentMesh: 1
+--- !u!114 &79149570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79149566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1efd8cafa5ca594ab3843e7ed7f8c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 0
+  text:
+  - "\u041B\u0443\u0447\u043D\u0438\u043A"
+  - Archer
 --- !u!1 &181762265
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 181762266}
   - component: {fileID: 181762268}
+  - component: {fileID: 181762269}
   - component: {fileID: 181762267}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -550,6 +568,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181762265}
   m_CullTransparentMesh: 1
+--- !u!114 &181762269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181762265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1efd8cafa5ca594ab3843e7ed7f8c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 0
+  text:
+  - "\u0412\u043E\u0438\u043D"
+  - Warrior
 --- !u!1 &189212362
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +1030,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1029175354}
   - component: {fileID: 1029175356}
+  - component: {fileID: 1029175357}
   - component: {fileID: 1029175355}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -1120,6 +1155,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029175353}
   m_CullTransparentMesh: 1
+--- !u!114 &1029175357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029175353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1efd8cafa5ca594ab3843e7ed7f8c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 0
+  text:
+  - "\u041C\u0430\u0433"
+  - Mage
 --- !u!1 &1234581685
 GameObject:
   m_ObjectHideFlags: 0
