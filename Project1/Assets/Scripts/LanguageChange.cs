@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class LanguageChange : MonoBehaviour
 {
-    public int language;
+    [SerializeField]
+    private int language;
+    
 
    
     void Start()
     {
-        
+        Debug.Log(language);
+
     }
 
     
     void Update()
     {
-        
+
     }
 
     public void RussianLanguage()
@@ -26,6 +30,7 @@ public class LanguageChange : MonoBehaviour
         language = 0;
         PlayerPrefs.SetInt("language", language);
         SceneManager.LoadScene(0);
+            
 
     }
 
@@ -34,6 +39,7 @@ public class LanguageChange : MonoBehaviour
         language = 1;
         PlayerPrefs.SetInt("language", language);
         SceneManager.LoadScene(0);
+        
 
     }
 

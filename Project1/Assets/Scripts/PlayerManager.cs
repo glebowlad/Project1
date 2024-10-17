@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
     public EnemyController enemy;
     public PlayerSpawner spawner;
     public MenuManager menuManager;
+    //public LanguageChange languageChange;
 
     [SerializeField] private Vector3 slashPos;
 
@@ -29,14 +30,18 @@ public class PlayerManager : MonoBehaviour
     public Button prayButton;
     public Button talkButton;
     public Button attackButton;
+    public Button restartButton;
 
     public bool isAttacked=false;
 
-    //public bool isAttacked=false;
+    
 
    void Start()
     {
         ChooseAttackPrefab();
+        
+        restartButton.interactable = false;
+        
     }
 
     public void ChooseAttackPrefab()
@@ -65,26 +70,43 @@ public class PlayerManager : MonoBehaviour
         isAttacked = false;
         
 
-        if (health.value <= 0)
-        {
-           attackButton.onClick.AddListener(menuManager.RestartLevel);
-        }
+       
         if (enemy.enemyHealth.value <= 0)
         {
-            text.text = " Вы одолели врага.Продолжить?";
-            attackText.text = "Продолжить";
+            //if (languageChange.language == 0)
+            //{
+               text.text = " Вы одолели врага.Продолжить?";
+               attackText.text = "Продолжить";
+
+            //}
+            //else if(languageChange.language == 1) {
+            //    text.text = " You win! Continue?";
+            //    attackText.text = "Restart";
+            //}
+            attackButton.interactable = false;
             prayButton.interactable = false;
             talkButton.interactable = false;
-
-            attackButton.onClick.AddListener(menuManager.End);
+           
+            
         }
     }
     public void Talk()
     {
         
         health.value = 0;
+        //if(languageChange.language == 0)
+        //{
         text.text = "Вы умерли.Начать заново?";
-        attackText.text = "Заново";
+
+
+        //}
+        //else if (languageChange.language == 1)
+        //{
+        //    text.text = "You died.Try again?";
+        //    attackText.text = "Restart";
+        //}
+        restartButton.interactable = true;
+        attackButton.interactable = false;
         prayButton.interactable = false;
         talkButton.interactable = false;
         
@@ -95,8 +117,19 @@ public class PlayerManager : MonoBehaviour
     {
         Instantiate(prayerPrefab,transform.position,Quaternion.identity,transform);  
         health.value = 0;
-        text.text = "Вы умерли.Начать заново?";
-        attackText.text = "Заново";
+        //if (languageChange.language == 0)
+        //{
+           text.text = "Вы умерли.Начать заново?";
+            attackText.text = "Заново";
+
+        //}
+        //else if (languageChange.language == 1)
+        //{
+        //    text.text = "You died.Try again?";
+        //    attackText.text = "Restart";
+        //}
+        restartButton.interactable = true;
+        attackButton.interactable = false;
         prayButton.interactable = false;
         talkButton.interactable = false;
 
@@ -111,8 +144,7 @@ public class PlayerManager : MonoBehaviour
         isAttacked = true;
         var text = Instantiate(floatingTextPrefab, transform.position , Quaternion.identity, transform);
 
-        Debug.Log($"{transform.position}");
-        Debug.Log($"Done");
+       
 
         var oldPos = text.transform.position;
         oldPos.z = 0f;
