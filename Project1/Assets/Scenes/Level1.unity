@@ -829,7 +829,7 @@ MonoBehaviour:
   prayButton: {fileID: 684908757}
   talkButton: {fileID: 1932960155}
   attackButton: {fileID: 1180578675}
-  restartButton: {fileID: 0}
+  restartButton: {fileID: 1341578021}
   isAttacked: 0
 --- !u!114 &1195126874
 MonoBehaviour:
@@ -916,6 +916,10 @@ PrefabInstance:
     - target: {fileID: 2215714565268355714, guid: a0035826ce84c9849b166de9be1ec629, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495426869865636132, guid: a0035826ce84c9849b166de9be1ec629, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5115101037452252421, guid: a0035826ce84c9849b166de9be1ec629, type: 3}
       propertyPath: m_Name
@@ -1148,6 +1152,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aac005ddfa010454fa6688cb794beb92, type: 3}
+--- !u!114 &1341578021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2215714565268355714, guid: a0035826ce84c9849b166de9be1ec629, type: 3}
+  m_PrefabInstance: {fileID: 1262917915}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1481264212 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1442740504013186746, guid: a0035826ce84c9849b166de9be1ec629, type: 3}

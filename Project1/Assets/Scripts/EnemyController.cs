@@ -24,7 +24,9 @@ public class EnemyController : MonoBehaviour
     void Awake()
     {
         Instantiate(enemyPrefab, position, Quaternion.identity);
-        Debug.Log($"test {textOffset}");
+        textOffset = new Vector3(300, 250, 0);
+        
+
     }
 
     private void LateUpdate()
@@ -48,7 +50,7 @@ public class EnemyController : MonoBehaviour
         oldPos += textOffset;
         text.transform.position = oldPos;
 
-        Debug.Log($"{text.transform.position}");
+       
         text.GetComponent<TextMeshProUGUI>().text = "-" + damage.ToString();
 
         if (enemyHealth.value <= 0)

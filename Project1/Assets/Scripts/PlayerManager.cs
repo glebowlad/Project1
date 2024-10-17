@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject attackPrefab;
     public GameObject floatingTextPrefab;
 
-    public Vector3 prayOffset = new Vector3(2, 0, 0);
+    public Vector3 damageOffset = new Vector3(-50, 0, 0);
     public Slider health;
     public TextMeshProUGUI text;
     public TextMeshProUGUI attackText;
@@ -115,7 +115,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Pray()
     {
-        Instantiate(prayerPrefab,transform.position,Quaternion.identity,transform);  
+        Instantiate(prayerPrefab, slashPos, Quaternion.identity);  
         health.value = 0;
         //if (languageChange.language == 0)
         //{
@@ -148,7 +148,9 @@ public class PlayerManager : MonoBehaviour
 
         var oldPos = text.transform.position;
         oldPos.z = 0f;
+        oldPos += damageOffset;
         text.transform.position = oldPos;
+        Debug.Log($"{text.transform.position}");
 
         text.GetComponent<TextMeshProUGUI>().text = "-" + damage.ToString();
     }
