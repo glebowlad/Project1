@@ -15,9 +15,6 @@ public class LanguageText : MonoBehaviour
 
     void Start()
     {
-        Console.InputEncoding= Encoding.Unicode;
-        Console.OutputEncoding = Encoding.Unicode;
-
         language = PlayerPrefs.GetInt("language", language);
         textLine= GetComponent<TextMeshProUGUI>();
         textLine.text= ""+ text[language];

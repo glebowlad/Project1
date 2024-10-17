@@ -35,9 +35,17 @@ public class PlayerManager : MonoBehaviour
 
     public bool isAttacked=false;
 
-    
+    public AudioSource swordSound;
+    public AudioSource arrowSound;
+    public AudioSource spellSound;
+    public AudioSource attackSound;
+    public AudioSource winSound;
+    public AudioSource loseSound;
 
-   void Start()
+
+
+
+    void Start()
     {
         ChooseAttackPrefab();
         
@@ -53,12 +61,15 @@ public class PlayerManager : MonoBehaviour
             case 0 :
                 
                 attackPrefab = slashPrefab;
+                attackSound=swordSound;
                 break;
             case 1 :
                 attackPrefab = arrowPrefab;
+                attackSound=arrowSound;
                 break;
             case 2 :
                 attackPrefab = magicPrefab;
+                attackSound=spellSound;
                 break;
             default:
                 break;
@@ -70,6 +81,7 @@ public class PlayerManager : MonoBehaviour
         Instantiate(attackPrefab, slashPos, Quaternion.identity);
         enemy.TakeDamage(10f);
         isAttacked = false;
+        attackSound.Play();
         
 
        
@@ -77,6 +89,7 @@ public class PlayerManager : MonoBehaviour
         {
             //if (languageChange.language == 0)
             //{
+                winSound.Play();
                text.text = " Вы одолели врага.Продолжить?";
                attackText.text = "Продолжить";
 
@@ -99,6 +112,7 @@ public class PlayerManager : MonoBehaviour
         health.value = 0;
         //if(languageChange.language == 0)
         //{
+        loseSound.Play();
         text.text = "Вы умерли.Начать заново?";
 
 
@@ -122,8 +136,9 @@ public class PlayerManager : MonoBehaviour
         health.value = 0;
         //if (languageChange.language == 0)
         //{
+           loseSound.Play();
            text.text = "Вы умерли.Начать заново?";
-            attackText.text = "Заново";
+           attackText.text = "Заново";
 
         //}
         //else if (languageChange.language == 1)
