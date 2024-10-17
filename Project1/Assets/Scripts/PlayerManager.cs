@@ -31,6 +31,7 @@ public class PlayerManager : MonoBehaviour
     public Button talkButton;
     public Button attackButton;
     public Button restartButton;
+    public Button continueButton;
 
     public bool isAttacked=false;
 
@@ -41,7 +42,8 @@ public class PlayerManager : MonoBehaviour
         ChooseAttackPrefab();
         
         restartButton.interactable = false;
-        
+        continueButton.interactable = false;
+
     }
 
     public void ChooseAttackPrefab()
@@ -86,8 +88,9 @@ public class PlayerManager : MonoBehaviour
             attackButton.interactable = false;
             prayButton.interactable = false;
             talkButton.interactable = false;
-           
-            
+            continueButton.interactable = true;
+
+
         }
     }
     public void Talk()
