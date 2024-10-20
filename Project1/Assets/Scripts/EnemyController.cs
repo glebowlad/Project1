@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     public Slider enemyHealth;
     public PlayerManager player;
     public AudioSource enemyAudio;
+    public CameraShake cameraShake;
     
 
     public Vector3 position= new Vector3 (5.7f,1,0);
@@ -65,6 +66,7 @@ public class EnemyController : MonoBehaviour
     public void Attack()
     {
         enemyAudio.Play();
-     player.TakeDamage(10f);
+        player.TakeDamage(10f);
+        cameraShake.Shake();
     }
 }

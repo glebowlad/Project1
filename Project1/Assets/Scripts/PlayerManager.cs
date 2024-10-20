@@ -168,7 +168,7 @@ public class PlayerManager : MonoBehaviour
         oldPos.z = 0f;
         oldPos += damageOffset;
         text.transform.position = oldPos;
-        Debug.Log($"{text.transform.position}");
+        
 
         text.GetComponent<TextMeshProUGUI>().text = "-" + damage.ToString();
     }
