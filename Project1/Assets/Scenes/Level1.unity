@@ -533,7 +533,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -9.591858, y: 0}
+  m_AnchoredPosition: {x: -9.591797, y: 0}
   m_SizeDelta: {x: -156.398, y: 255.36078}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &694113376
@@ -607,7 +607,6 @@ GameObject:
   - component: {fileID: 838517523}
   - component: {fileID: 838517522}
   - component: {fileID: 838517525}
-  - component: {fileID: 838517526}
   - component: {fileID: 838517527}
   - component: {fileID: 838517528}
   m_Layer: 0
@@ -704,33 +703,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character:
-  - {fileID: 1749268798663348014, guid: e1ac33cadcbea714398a2f7d1afae38d, type: 3}
-  - {fileID: 3687617072074414941, guid: a7f514a7aec6881408dfe24f2a33b364, type: 3}
-  - {fileID: 4390719790626008194, guid: 48025fa7a927bef4c824c63e4744e23a, type: 3}
+  - {fileID: 8002905644112171144, guid: b059fef4612f32c43947e0a38ab782fe, type: 3}
+  - {fileID: 7656328315673227964, guid: 20c40ec641f5d9f40939a9269cf332a9, type: 3}
+  - {fileID: 3037652720194489586, guid: 9ac8f74d9146f264fb60bdd6eb0c8934, type: 3}
   position: {x: -5, y: 1, z: 0}
---- !u!114 &838517526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 838517521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7112e03d6841d8042844b5de07557a56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floatingTextPrefab: {fileID: 0}
-  enemyPrefab: {fileID: 2301821867687521672, guid: 1bf84f52e4c2f344082219bcffb9ddfa, type: 3}
-  winTextPrefab: {fileID: 0}
-  enemyHealth: {fileID: 0}
-  player: {fileID: 0}
-  enemyAudio: {fileID: 0}
-  cameraShake: {fileID: 838517528}
-  position: {x: 5.7, y: 1, z: 0}
-  textOffset: {x: -1, y: 1, z: 0}
-  winTextOffset: {x: -2, y: 4, z: 0}
-  isAttacked: 0
 --- !u!95 &838517527
 Animator:
   serializedVersion: 5
@@ -1352,7 +1328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingTextPrefab: {fileID: 6745444706686325388, guid: 7070eaf242dad4a488dad69241d6bbe2, type: 3}
-  enemyPrefab: {fileID: 2301821867687521672, guid: 1bf84f52e4c2f344082219bcffb9ddfa, type: 3}
+  enemyPrefab: {fileID: 5257115151188466873, guid: 61c882480f7b23f4c81ae14b1d752bf8, type: 3}
   winTextPrefab: {fileID: 7882140247836395475, guid: b7ed7965909703a4b9fd47d30865809a, type: 3}
   enemyHealth: {fileID: 1659622643}
   player: {fileID: 1195126873}
