@@ -48,10 +48,10 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         restartButton.gameObject.SetActive(false);
+        continueButton.gameObject.SetActive(false);
         ChooseAttackPrefab();
 
-        restartButton.interactable = false;
-        continueButton.interactable = false;
+        
         languageChange = GameObject.FindObjectOfType<LanguageChange>();
     }
 
@@ -89,21 +89,23 @@ public class PlayerManager : MonoBehaviour
 
         if (enemy.enemyHealth.value <= 0)
         {
-            //if (languageChange.language == 0)
-            //{
             winSound.Play();
-            text.text = " Âû îäîëåëè âðàãà.Ïðîäîëæèòü?";
-            attackText.text = "Ïðîäîëæèòü";
 
-            //}
-            //else if(languageChange.language == 1) {
-            //    text.text = " You win! Continue?";
-            //    attackText.text = "Restart";
-            //}
-            attackButton.interactable = false;
-            prayButton.interactable = false;
-            talkButton.interactable = false;
-            continueButton.interactable = true;
+            if (languageChange.GetLanguage() == 0)
+            {
+                text.text = " Ты победил его! Продолжить приключение?";
+            
+
+            }
+            else if (languageChange.GetLanguage() == 1)
+            {
+                text.text = " You win! Continue?";
+
+            }
+            attackButton.gameObject.SetActive(false); 
+            prayButton.gameObject.SetActive(false);
+            talkButton.gameObject.SetActive(false);
+            continueButton.gameObject.SetActive(true);
 
 
         }
@@ -115,18 +117,18 @@ public class PlayerManager : MonoBehaviour
         loseSound.Play();
         if (languageChange.GetLanguage() == 0)
         {
-            text.text = "Вы проиграли, хотите начать заного?";
+            text.text = "Вы проиграли, хотите начать заново?";
         }
         else if (languageChange.GetLanguage() == 1)
         {
             text.text = "You died.Try again?";
-            attackText.text = "Restart";
+            
         }
 
-        restartButton.interactable = true;
-        attackButton.interactable = false;
-        prayButton.interactable = false;
-        talkButton.interactable = false;
+        
+        attackButton.gameObject.SetActive(false);
+        prayButton.gameObject.SetActive(false);
+        talkButton.gameObject.SetActive(false);
 
         restartButton.gameObject.SetActive(true);
     }
@@ -135,22 +137,24 @@ public class PlayerManager : MonoBehaviour
     {
         Instantiate(prayerPrefab, slashPos, Quaternion.identity);
         health.value = 0;
-        //if (languageChange.language == 0)
-        //{
         loseSound.Play();
-        text.text = "Âû óìåðëè.Íà÷àòü çàíîâî?";
-        attackText.text = "Çàíîâî";
+        if (languageChange.GetLanguage() == 0)
+        {
+            text.text = "Вы проиграли, хотите начать заново?";
+        }
+        else if (languageChange.GetLanguage() == 1)
+        {
+            text.text = "You died.Try again?";
 
-        //}
-        //else if (languageChange.language == 1)
-        //{
-        //    text.text = "You died.Try again?";
-        //    attackText.text = "Restart";
-        //}
-        restartButton.interactable = true;
-        attackButton.interactable = false;
-        prayButton.interactable = false;
-        talkButton.interactable = false;
+        }
+
+
+        attackButton.gameObject.SetActive(false);
+        prayButton.gameObject.SetActive(false);
+        talkButton.gameObject.SetActive(false);
+
+        restartButton.gameObject.SetActive(true);
+
 
 
 
