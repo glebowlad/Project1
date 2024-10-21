@@ -861,9 +861,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 762053951779330070, guid: 5bb6f2d3562bbe44ea3a0ff3d9c9f057, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 908840118}
     - targetCorrespondingSourceObject: {fileID: 5722108049673904333, guid: 5bb6f2d3562bbe44ea3a0ff3d9c9f057, type: 3}
       insertIndex: -1
       addedObject: {fileID: 908840114}
@@ -876,11 +873,6 @@ RectTransform:
 --- !u!1 &908840110 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5722108049673904333, guid: 5bb6f2d3562bbe44ea3a0ff3d9c9f057, type: 3}
-  m_PrefabInstance: {fileID: 908840108}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &908840111 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 762053951779330070, guid: 5bb6f2d3562bbe44ea3a0ff3d9c9f057, type: 3}
   m_PrefabInstance: {fileID: 908840108}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &908840114
@@ -904,28 +896,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8476717553703157621, guid: 5bb6f2d3562bbe44ea3a0ff3d9c9f057, type: 3}
   m_PrefabInstance: {fileID: 908840108}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908840111}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &908840118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908840111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1efd8cafa5ca594ab3843e7ed7f8c79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  language: 0
-  text:
-  - "\u0414\u0430\u043B\u0435\u0435"
-  - Continue
 --- !u!114 &909705541 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7493874962010686618, guid: aac005ddfa010454fa6688cb794beb92, type: 3}
@@ -1292,6 +1268,7 @@ MonoBehaviour:
   enemy: {fileID: 1195126874}
   spawner: {fileID: 838517525}
   menuManager: {fileID: 1195126875}
+  languageChange: {fileID: 0}
   slashPos: {x: 0.71, y: 0, z: 0}
   prayerPrefab: {fileID: 7614621882954495531, guid: fb1fbb6d16ba85744b176d89fd10b998, type: 3}
   slashPrefab: {fileID: 8512428086239989607, guid: 075ace5de5590284e8ef5e642ab46d07, type: 3}
@@ -1537,9 +1514,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5115101037452252421, guid: a0035826ce84c9849b166de9be1ec629, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1341578024}
     - targetCorrespondingSourceObject: {fileID: 5528717063385840914, guid: a0035826ce84c9849b166de9be1ec629, type: 3}
       insertIndex: -1
       addedObject: {fileID: 740384829}
@@ -1682,38 +1656,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aac005ddfa010454fa6688cb794beb92, type: 3}
---- !u!1 &1279799102 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5115101037452252421, guid: a0035826ce84c9849b166de9be1ec629, type: 3}
-  m_PrefabInstance: {fileID: 1262917915}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1341578021 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2215714565268355714, guid: a0035826ce84c9849b166de9be1ec629, type: 3}
   m_PrefabInstance: {fileID: 1262917915}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279799102}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1341578024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279799102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1efd8cafa5ca594ab3843e7ed7f8c79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  language: 0
-  text:
-  - "\u0417\u0430\u043D\u043E\u0432\u043E"
-  - Restart
 --- !u!114 &1481264212 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1442740504013186746, guid: a0035826ce84c9849b166de9be1ec629, type: 3}

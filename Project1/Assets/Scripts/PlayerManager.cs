@@ -1,19 +1,19 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-    
+
 
 public class PlayerManager : MonoBehaviour
 {
     public EnemyController enemy;
     public PlayerSpawner spawner;
     public MenuManager menuManager;
-    //public LanguageChange languageChange;
+    public LanguageChange languageChange;
 
     [SerializeField] private Vector3 slashPos;
-
+    
     public GameObject prayerPrefab;
     public GameObject slashPrefab;
     public GameObject arrowPrefab;
@@ -26,14 +26,14 @@ public class PlayerManager : MonoBehaviour
     public TextMeshProUGUI text;
     public TextMeshProUGUI attackText;
 
-    
+
     public Button prayButton;
     public Button talkButton;
     public Button attackButton;
     public Button restartButton;
     public Button continueButton;
 
-    public bool isAttacked=false;
+    public bool isAttacked = false;
 
     public AudioSource swordSound;
     public AudioSource arrowSound;
@@ -47,33 +47,35 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
+        restartButton.gameObject.SetActive(false);
         ChooseAttackPrefab();
-        
+
         restartButton.interactable = false;
         continueButton.interactable = false;
-
+        languageChange = GameObject.FindObjectOfType<LanguageChange>();
     }
 
     public void ChooseAttackPrefab()
     {
+
         switch (spawner.CharacterId)
         {
-            case 0 :
-                
+            case 0:
+
                 attackPrefab = slashPrefab;
-                attackSound=swordSound;
+                attackSound = swordSound;
                 break;
-            case 1 :
+            case 1:
                 attackPrefab = arrowPrefab;
-                attackSound=arrowSound;
+                attackSound = arrowSound;
                 break;
-            case 2 :
+            case 2:
                 attackPrefab = magicPrefab;
-                attackSound=spellSound;
+                attackSound = spellSound;
                 break;
             default:
                 break;
-                
+
         }
     }
     public void Attack()
@@ -82,16 +84,16 @@ public class PlayerManager : MonoBehaviour
         enemy.TakeDamage(10f);
         isAttacked = false;
         attackSound.Play();
-        
 
-       
+
+
         if (enemy.enemyHealth.value <= 0)
         {
             //if (languageChange.language == 0)
             //{
-                winSound.Play();
-               text.text = " Âû îäîëåëè âðàãà.Ïðîäîëæèòü?";
-               attackText.text = "Ïðîäîëæèòü";
+            winSound.Play();
+            text.text = " Ã‚Ã» Ã®Ã¤Ã®Ã«Ã¥Ã«Ã¨ Ã¢Ã°Ã Ã£Ã .ÃÃ°Ã®Ã¤Ã®Ã«Ã¦Ã¨Ã²Ã¼?";
+            attackText.text = "ÃÃ°Ã®Ã¤Ã®Ã«Ã¦Ã¨Ã²Ã¼";
 
             //}
             //else if(languageChange.language == 1) {
@@ -108,37 +110,36 @@ public class PlayerManager : MonoBehaviour
     }
     public void Talk()
     {
-        
+
         health.value = 0;
-        //if(languageChange.language == 0)
-        //{
         loseSound.Play();
-        text.text = "Âû óìåðëè.Íà÷àòü çàíîâî?";
+        if (languageChange.GetLanguage() == 0)
+        {
+            text.text = "Ð’Ñ‹ Ð¿Ñ€Ð¾Ð¸Ð³Ñ€Ð°Ð»Ð¸, Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ Ð·Ð°Ð½Ð¾Ð³Ð¾?";
+        }
+        else if (languageChange.GetLanguage() == 1)
+        {
+            text.text = "You died.Try again?";
+            attackText.text = "Restart";
+        }
 
-
-        //}
-        //else if (languageChange.language == 1)
-        //{
-        //    text.text = "You died.Try again?";
-        //    attackText.text = "Restart";
-        //}
         restartButton.interactable = true;
         attackButton.interactable = false;
         prayButton.interactable = false;
         talkButton.interactable = false;
-        
-      
+
+        restartButton.gameObject.SetActive(true);
     }
 
     public void Pray()
     {
-        Instantiate(prayerPrefab, slashPos, Quaternion.identity);  
+        Instantiate(prayerPrefab, slashPos, Quaternion.identity);
         health.value = 0;
         //if (languageChange.language == 0)
         //{
-           loseSound.Play();
-           text.text = "Âû óìåðëè.Íà÷àòü çàíîâî?";
-           attackText.text = "Çàíîâî";
+        loseSound.Play();
+        text.text = "Ã‚Ã» Ã³Ã¬Ã¥Ã°Ã«Ã¨.ÃÃ Ã·Ã Ã²Ã¼ Ã§Ã Ã­Ã®Ã¢Ã®?";
+        attackText.text = "Ã‡Ã Ã­Ã®Ã¢Ã®";
 
         //}
         //else if (languageChange.language == 1)
@@ -160,15 +161,15 @@ public class PlayerManager : MonoBehaviour
     {
         health.value -= damage;
         isAttacked = true;
-        var text = Instantiate(floatingTextPrefab, transform.position , Quaternion.identity, transform);
+        var text = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity, transform);
 
-       
+
 
         var oldPos = text.transform.position;
         oldPos.z = 0f;
         oldPos += damageOffset;
         text.transform.position = oldPos;
-        
+
 
         text.GetComponent<TextMeshProUGUI>().text = "-" + damage.ToString();
     }

@@ -19,6 +19,4 @@ public class LanguageText : MonoBehaviour
         textLine= GetComponent<TextMeshProUGUI>();
         textLine.text= ""+ text[language];
     }
-
-   
 }
