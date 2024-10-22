@@ -20,8 +20,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject magicPrefab;
     public GameObject attackPrefab;
     public GameObject floatingTextPrefab;
+    public GameObject speechPrefab;
 
-    public Vector3 damageOffset = new Vector3(-50, 0, 0);
+    private Vector3 damageOffset = new Vector3(-250,300 , 0);
     public Slider health;
     public TextMeshProUGUI text;
     public TextMeshProUGUI attackText;
@@ -112,7 +113,7 @@ public class PlayerManager : MonoBehaviour
     }
     public void Talk()
     {
-
+        Instantiate(speechPrefab, slashPos, Quaternion.identity);
         health.value = 0;
         loseSound.Play();
         if (languageChange.GetLanguage() == 0)
@@ -167,13 +168,11 @@ public class PlayerManager : MonoBehaviour
         isAttacked = true;
         var text = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity, transform);
 
-
-
         var oldPos = text.transform.position;
         oldPos.z = 0f;
         oldPos += damageOffset;
         text.transform.position = oldPos;
-
+        Debug.Log(text.transform.position);
 
         text.GetComponent<TextMeshProUGUI>().text = "-" + damage.ToString();
     }

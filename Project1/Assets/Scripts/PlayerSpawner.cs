@@ -6,7 +6,7 @@ public class PlayerSpawner : MonoBehaviour
 {
     public List<GameObject> character;
     
-    public Vector3 position= new Vector3(150,100,0);
+    public Vector3 position= new Vector3(150,80,0);
 
     [SerializeField]
     public int CharacterId { get; private set; }

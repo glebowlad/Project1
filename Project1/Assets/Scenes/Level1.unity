@@ -612,7 +612,7 @@ MonoBehaviour:
   - {fileID: 8002905644112171144, guid: b059fef4612f32c43947e0a38ab782fe, type: 3}
   - {fileID: 7656328315673227964, guid: 20c40ec641f5d9f40939a9269cf332a9, type: 3}
   - {fileID: 3037652720194489586, guid: 9ac8f74d9146f264fb60bdd6eb0c8934, type: 3}
-  position: {x: -5, y: 1, z: 0}
+  position: {x: -5, y: 0.5, z: 0}
 --- !u!95 &838517527
 Animator:
   serializedVersion: 5
@@ -1182,7 +1182,7 @@ MonoBehaviour:
   magicPrefab: {fileID: 6136622751934568853, guid: 77b1592c8ca7e464989ad9726cd786b6, type: 3}
   attackPrefab: {fileID: 0}
   floatingTextPrefab: {fileID: 6745444706686325388, guid: 7070eaf242dad4a488dad69241d6bbe2, type: 3}
-  damageOffset: {x: -50, y: 0, z: 0}
+  speechPrefab: {fileID: 5538307015426249076, guid: 347b7d0292a6c7043b641d69b381ab0d, type: 3}
   health: {fileID: 909705541}
   text: {fileID: 1090719156}
   attackText: {fileID: 1481264212}
@@ -1212,14 +1212,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatingTextPrefab: {fileID: 6745444706686325388, guid: 7070eaf242dad4a488dad69241d6bbe2, type: 3}
   enemyPrefab: {fileID: 5257115151188466873, guid: 61c882480f7b23f4c81ae14b1d752bf8, type: 3}
-  winTextPrefab: {fileID: 7882140247836395475, guid: b7ed7965909703a4b9fd47d30865809a, type: 3}
   enemyHealth: {fileID: 1659622643}
   player: {fileID: 1195126873}
   enemyAudio: {fileID: 1736118445}
   cameraShake: {fileID: 838517528}
   position: {x: 5.7, y: 1, z: 0}
   textOffset: {x: 100, y: 100, z: 0}
-  winTextOffset: {x: -2, y: 4, z: 0}
   isAttacked: 0
 --- !u!114 &1195126875
 MonoBehaviour:
